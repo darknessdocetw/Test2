@@ -4,15 +4,15 @@
   <li>
  	  <%= event.name %>
  	  <p> <%= event.description %> </p>
-  <%= link_to 'Show', :controller => 'events', :action => 'show', :id => event %>
-  <%= link_to 'Edit', :controller => 'events', :action => 'edit', :id => event %>
-  <%= link_to 'Delete', :controller => 'events', :action => 'destroy', :id => event %>
+  <%= link_to 'Show', event_path(event) %>
+  <%= link_to 'Edit', edit_event_path(event) %>
+  <%= button_to 'Delete', event_path(event) , :method => :delete %>
   </li>
 <% end %>
 </ul>
 <br>
-<%= link_to 'New Event', :controller => 'events', :action => 'new' %>
-<%= link_to 'Home' , :controller => 'welcome', :action => 'index' %>
+<%= link_to 'New Event', new_event_path %>
+<%= link_to 'Home' , root_path %>
 <br>
 <br>
 <%= paginate @events %>
