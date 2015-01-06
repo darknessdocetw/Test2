@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141225075637) do
     t.integer  "capacity"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status"
   end
 
 end

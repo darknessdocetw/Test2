@@ -1,7 +1,11 @@
 <%= form_for @event , :url => event_path(@event), :method => :patch do |f| %>
 
     <%= render :partial => 'form' , :locals =>{:f => f} %>
-    
+    <br>
     <%= f.submit "Update" %>
 
+<% end %>
+
+<%= link_to events_path , class: "btn btn-small" do%>
+<i class = 'glyphicon glyphicon-chevron-left'></i>
 <% end %>

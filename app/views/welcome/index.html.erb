@@ -1,3 +1,5 @@
-<h1>welcome <%= Time.now %></h1>
-<p> <%= link_to "hello" , welcome_say_hello_path%></p>
-<p> <%= link_to 'event' , events_path %></p>
+<h1>Welcome </h1>
+<h1><%= Time.now.to_s  %></h1>
+<p><h3> <%= link_to "Hello" , welcome_say_hello_path %>  <span class="label label-danger">New</span><h3></p>
+
+

@@ -1,3 +1,13 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*events*/
+div {list-style-type:none;}
+.event_bottom {
+    padding-top  :-10%;
+    padding-left :15%;
+    float :left;
+}
+.event_remove{
+    float: right;
+}

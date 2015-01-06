@@ -1,3 +1,5 @@
 <%= @event.name %>
 <%= simple_format(@event.description) %>
-<p><%= link_to 'Back to index' , events_path %> </p>
+<%= link_to events_path , class: "btn btn-small" do%>
+<i class = 'glyphicon glyphicon-chevron-left'></i>
+<% end %>

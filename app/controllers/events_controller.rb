@@ -4,7 +4,7 @@ class EventsController < ApplicationController
        
     
     def index
-        @events = Event.page(params[:page]).per(5)
+        @events = Event.page(params[:page]).per(4)
          respond_to do |format|
             format.html 
             format.xml { render :xml => @events.to_xml }
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
         
         
         if @event.update(event_params)
-           redirect_to event_url(@event)
+           redirect_to events_url
            flash[:notice] = 'Event was successfully update '
         else
            render :action => :edit

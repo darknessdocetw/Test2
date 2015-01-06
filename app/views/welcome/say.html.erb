@@ -1,2 +1,13 @@
-<h1>Hello !!!!!!</h1>
-<p> <%= link_to "<<<<<" , root_path %></p>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Hello, Guys!</h1>
+    <p> 這是一個用Ruby on Rails 寫的測試網站</p>
+    <p> 歡迎玩看看!!!!!!! </p>
+    <p>目前功能 &darr;&darr;&darr;&darr; <p>
+    
+    <li ><%= link_to '活動版',events_path , class:"btn btn-info btn-large" %> <span class="label label-danger">New</span> </li> 
+  </div>
+</div>
+<ul class="pager">
+  <li class="previous"><%= link_to root_path  do%>&larr;Back<% end %></li>
+</ul>
