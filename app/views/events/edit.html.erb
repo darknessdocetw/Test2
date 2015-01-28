@@ -1,4 +1,4 @@
-<%= form_for @event , :url => event_path(@event), :method => :patch do |f| %>
+<%= form_for @event  do |f| %>
 
     <%= render :partial => 'form' , :locals =>{:f => f} %>
     <br>
@@ -6,6 +6,6 @@
 
 <% end %>
 
-<%= link_to events_path , class: "btn btn-small" do%>
-<i class = 'glyphicon glyphicon-chevron-left'></i>
-<% end %>
+<ul class="pager">
+  <li class="previous"><%= link_to events_path do%>&larr;Back<% end %></li>
+</ul>

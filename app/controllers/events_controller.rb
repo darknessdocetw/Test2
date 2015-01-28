@@ -4,7 +4,7 @@ class EventsController < ApplicationController
        
     
     def index
-        @events = Event.page(params[:page]).per(4)
+        @events = Event.order("id DESC").page(params[:page]).per(4) #頁碼跟排序
          respond_to do |format|
             format.html 
             format.xml { render :xml => @events.to_xml }

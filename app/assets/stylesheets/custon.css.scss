@@ -2,13 +2,23 @@
 @import "bootstrap";
 
 /* partial */
-li {list-style-type:none;}
-body { padding-top: 70px; }
+li {list-style-type: none;}
+body { padding-top: 70px;
+        min-height: 100%;
+        // background-image:image-url('2-gray-wall.jpg') ;
+        // background-repeat: no-repeat;
+        // background-position: center;
+        // -webkit-background-size: cover;
+        // -moz-background-size: cover;
+        // -o-background-size: cover;
+        // background-size: cover;
+      
+      }
 html {
   overflow-y: scroll;
+  height: 100%;
 }
-#content {
-    padding:2% ;}
+
    
 
 

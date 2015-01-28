@@ -1,36 +1,45 @@
-<div class="row">
-  <div class="col-sm-6 col-md-3">
-<ul>
-<% @events.each do |event| %>
-<div class="thumbnail">
-  <%= button_to  event_path(event) , :method => :delete ,class: "btn  btn-danger event_remove",title: "close" do%>
-  <li>
-    <i class="glyphicon glyphicon-remove"></i>
-    <% end %>
- 	  <h1><%= event.name %></h1>
- 	  <div class="well well-sm">
- 	  <p> <%= event.description %> </p>
- 	  </div>
-  <%= link_to  event_path(event) , class: "btn btn-large btn-info" do%>
-  <i class = "glyphicon glyphicon-book"></i>
-  <% end %>
-  <%= link_to edit_event_path(event), class: "btn btn-large btn-info" do%>
-  <i class = "glyphicon glyphicon-pencil"></i>
-  <% end %>  
-
-
-</li>
+<div>    
+  <%= link_to new_event_path  , :class => 'btn btn-small btn-success' do %>
+  <i class = "glyphicon glyphicon-plus"></i> 新增<% end %>
 </div>
-<% end %>
-</ul>
-  </div>
-</div>  
-<div class="event_bottom">
-      <%= link_to new_event_path  , :class => 'btn btn-small btn-success' do %>
-      <i class = "glyphicon glyphicon-plus"></i> 新增<% end %>
-      
-      <%= link_to root_path, :class => 'btn btn-primary'  do%>
-      <i class = "glyphicon glyphicon-home"></i> Home<% end %>
+
+<br>
+
+<div class="row ">
+  <div class="col-sm-6 col-md-5">
+  <ul>
+  <% @events.each do |event| %>
+    <!--delete-->
+    <div class="thumbnail event_shadow">  
+      <%= button_to  event_path(event) , :method => :delete ,class: "btn  btn-danger event_remove",title: "close",data: { confirm: 'Are you sure?' } do%>
+      <li>
+      <i class="glyphicon glyphicon-remove"></i>
+      <% end %>
+    <!--showname-->
+      <h1><%= event.name %></h1>
+    <!--content-->
+        <div class="well well-sm">
+        <p> <%= event.description %> </p>
+        </div>
+    <!--option-->
+        <%= link_to 'attendees', event_attendees_path(event) %>
+        <!--show-->
+        <%= link_to  event_path(event) , class: "btn btn-large btn-info" do%>
+        <i class = "glyphicon glyphicon-book"></i>
+        <% end %>
+        <!--edit-->
+        <%= link_to edit_event_path(event), class: "btn btn-large btn-info" do%>
+        <i class = "glyphicon glyphicon-pencil"></i>
+        <% end %> 
       <br>
-      <%= paginate @events %>
-<div>
+      </li>
+    </div>
+  <% end %>
+  </ul>
+  </div>
+</div>
+
+<div class="event_bottom">
+      <%= paginate @events %> 
+</div>
+ 
