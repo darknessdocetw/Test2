@@ -6,4 +6,5 @@ class Event < ActiveRecord::Base
     has_many :groups, :through => :event_groupships
     belongs_to :category
     validates_presence_of :name
+    accepts_nested_attributes_for :location, :allow_destroy => true, :reject_if => :all_blank
 end

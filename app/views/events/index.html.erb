@@ -1,36 +1,50 @@
+
+<!-- 活動板 -->
+<div class="event">
+<!-- 新增 -->
 <div>    
   <%= link_to new_event_path  , :class => 'btn btn-small btn-success' do %>
   <i class = "glyphicon glyphicon-plus"></i> 新增<% end %>
 </div>
 
 <br>
-
+<!-- 資料表 -->
 <div class="row ">
-  <div class="col-sm-6 col-md-5">
+  <div class="col-sm-8 col-md-5">
+    
   <ul>
   <% @events.each do |event| %>
-    <!--delete-->
-    <div class="thumbnail event_shadow">  
+    <div class="thumbnail event_shadow">
+      
+    <!--delete-->  
       <%= button_to  event_path(event) , :method => :delete ,class: "btn  btn-danger event_remove",title: "close",data: { confirm: 'Are you sure?' } do%>
       <li>
       <i class="glyphicon glyphicon-remove"></i>
       <% end %>
+      
     <!--showname-->
       <h1><%= event.name %></h1>
+      
+    <!-- 地點 -->
+      <%= link_to 'location', event_location_path(event) %>
+      
     <!--content-->
         <div class="well well-sm">
-        <p> <%= event.description %> </p>
+          <p> <%= event.description %> </p>
         </div>
     <!--option-->
         <%= link_to 'attendees', event_attendees_path(event) %>
+        
         <!--show-->
         <%= link_to  event_path(event) , class: "btn btn-large btn-info" do%>
         <i class = "glyphicon glyphicon-book"></i>
         <% end %>
+        
         <!--edit-->
         <%= link_to edit_event_path(event), class: "btn btn-large btn-info" do%>
         <i class = "glyphicon glyphicon-pencil"></i>
         <% end %> 
+        
       <br>
       </li>
     </div>
@@ -38,8 +52,9 @@
   </ul>
   </div>
 </div>
-
+<!-- 分頁 -->
 <div class="event_bottom">
       <%= paginate @events %> 
 </div>
- 
+
+</div>

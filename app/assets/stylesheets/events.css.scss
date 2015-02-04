@@ -3,10 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /*events*/
 div {list-style-type:none;}
+.event{
+         float: right;
+         height: 100%;
+         width: 60%;
+    
+}
 .event_bottom {
     padding-top: -10%;
-    padding-left: 25%;
-    float: left;
+    padding-right: 40%;
+    float: right;
 }
 .event_remove{
     float: right;

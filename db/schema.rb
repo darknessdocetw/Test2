@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20150116084900) do
   end
 
   create_table "categories", force: true do |t|
+    t.string   "name"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,7 +42,10 @@ ActiveRecord::Schema.define(version: 20150116084900) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
+    t.integer  "category_id"
   end
+
+  add_index "events", ["category_id"], name: "index_events_on_category_id"
 
   create_table "groups", force: true do |t|
     t.string   "name"
